@@ -4,19 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from './pages/layout';
-import LogIn from './element/LogIn/login';
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element = {<Layout/>} />
-        <Route index element = {<LogIn/>}/>
-      </Routes>
-    </BrowserRouter>
-  )
-}
+
+// export default 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

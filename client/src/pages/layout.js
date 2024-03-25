@@ -1,9 +1,10 @@
 import { Outlet, Link } from "react-router-dom";
-
-const Layout = () => {
+import Header from "../element/Header/header";
+function Layout ()   {
   return (
     <>
-      <nav>
+    <Header/>
+      {/* <nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -15,9 +16,9 @@ const Layout = () => {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
 
-      <Outlet />
+      {/* <Outlet /> */}
     </>
   )
 };

@@ -1,5 +1,8 @@
 import logo from '../Header/images.png'
 import './header.css'
+import { Outlet, Link } from "react-router-dom";
+import Home from '../../pages/home';
+import LogIn from '../../login';
 
 function Header() {
   return(
@@ -13,7 +16,8 @@ function Header() {
         <nav  class="navBar">
             <ul>
                 <li>
-                  <a className="pageLinks" href="./pages/aboutUs.html" target="_blank">About Us</a>
+                  {/* <a className="pageLinks" href="./pages/aboutUs.html" target="_blank">About Us</a> */}
+                  <Link to='/'>Home</Link>
                   
                 </li>
                 <li>
@@ -25,8 +29,8 @@ function Header() {
                   
                 </li>
                 <li>
-                  <a className="pageLinks" href="./pages/logIn.html" target="_blank">Log In</a>
-
+                  {/* <a className="pageLinks" href="./pages/logIn.html" target="_blank">Log In</a> */}
+                  <Link to='/login' >Log In</Link>
                     
                 </li>
             </ul>
@@ -37,6 +41,7 @@ function Header() {
       </header>
 
       <nav></nav>
+            <Outlet/>
     </div>
   );
 }
