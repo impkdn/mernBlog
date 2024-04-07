@@ -1,13 +1,13 @@
 import {  useState } from "react";
 function LogIn() {
-  const[ userName, setUserName] = useState('');
-  const[ passWord, setPassWord] = useState('');
+  const[ username, setUserName] = useState('');
+  const[ password, setPassWord] = useState('');
 
  async function registerUser(ev) {
     ev.preventDefault();
    await fetch('http://localhost:4000/login', {
       method : 'POST',
-      body: JSON.stringify({userName, passWord}),
+      body: JSON.stringify({username, password}),
       headers: {'Content-Type': 'application/json'}
     })
 
@@ -23,7 +23,7 @@ function LogIn() {
 
           <span>
             <label for="userName">User Name</label>
-            <input type="email" name="userName" />
+            <input type="text" name="userName" />
             
           </span>
           <span>
@@ -51,10 +51,10 @@ function LogIn() {
         <input type="text" name="lastName" /> <br /> */}
         <label for="userEmail">Email</label>
         <input 
-        type="email" 
+        type="text" 
         name="userEmail" 
         id=""
-        value={userName}
+        value={username}
         onChange={ev => setUserName ( ev.target.value)} 
         
         /> <br />
@@ -64,13 +64,13 @@ function LogIn() {
         {/* <input type="radio" name="userGenderMale" id="" value="MALE" />
         <label for="userGenderMale">Male</label>
         <input type="radio" name="userGenderFeMale" id="" value="FEMALE" />
-        <label for="userGenderFeMale">Fe Male</label> <br />
-        <label for="userPsw">Password</label> */}
+        <label for="userGenderFeMale">Fe Male</label>*/} <br />
+        <label for="userPsw">Password</label> 
         <input
          type="password" 
          name="userPsw" 
          id="userPsw"
-         value={passWord}
+         value={password}
         onChange={ev => setPassWord ( ev.target.value)} 
          />
         <input type="submit" value="Submit" name="submitBtn" />
