@@ -3,18 +3,19 @@ const db = require('mongodb');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
-const User = require('./models/user.js');
+const User = require('./models/User.js');
 
 
 app.use(cors());
 app.use(express.json());
+mongoose.connect('mongodb+srv://piyushjld:e8xVAMiPqftqwbNB@cluster0.vcr9fcn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
  app.post('/login',  async function (req,res)  {
-  await mongoose.connect('mongodb+srv://piyushjld:e8xVAMiPqftqwbNB@cluster0.vcr9fcn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
     const {username , password} = req.body;
-   const doc =  new User({username , password});
-   doc.save;
+     const userdoc = await  User.create({username , password});
+    //  userdoc.save;
 
-   res.json({doc})
+   res.json({userdoc});
+  
 });
 
 app.listen(4000);
