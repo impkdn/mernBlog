@@ -3,9 +3,10 @@ const db = require('mongodb')
 const {Schema , model} = mongoose;
 
 const UserSchema = new Schema ({
-    username : {type: String},
+    username : {type: String, unique: true},
     password : {type: String}
 });
+
 
 const UserModel = mongoose.model('Users', UserSchema );
 module.exports = UserModel;

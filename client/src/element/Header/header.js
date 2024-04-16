@@ -2,7 +2,7 @@ import logo from '../Header/images.png'
 import './header.css'
 import { Outlet, Link } from "react-router-dom";
 import Home from '../../pages/home';
-import LogIn from '../../login';
+import signUp from '../../pages/signUp';
 
 function Header() {
   return(
@@ -27,6 +27,11 @@ function Header() {
                 <li>
                   <a className="pageLinks" href="./pages/contactUs.html" target="_blank">Contact Us</a>
                   
+                </li>
+                <li>
+                  {/* <a className="pageLinks" href="./pages/logIn.html" target="_blank">Log In</a> */}
+                  <Link to='/signup' >Sign Up</Link>
+                    
                 </li>
                 <li>
                   {/* <a className="pageLinks" href="./pages/logIn.html" target="_blank">Log In</a> */}

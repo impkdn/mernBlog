@@ -1,11 +1,11 @@
 import {  useState } from "react";
-function LogIn() {
+function SignUp() {
   const[ username, setUserName] = useState('');
   const[ password, setPassWord] = useState('');
 
  async function registerUser(ev) {
     ev.preventDefault();
-   await fetch('http://localhost:4000/login', {
+   await fetch('http://localhost:4000/signup', {
       method : 'POST',
       body: JSON.stringify({username, password}),
       headers: {'Content-Type': 'application/json'}
@@ -16,9 +16,12 @@ function LogIn() {
     return (
         <div>
 
-        <h1 id="header">HI i am Log In!!!!</h1>
-    <div class="logIn" id="info">
-      <form action="#">
+        <h1 id="header">HI i am Sign Up!!!!</h1>
+    <div class="signUp" id="info">
+
+      
+      
+      {/* <form action="#">
         <div>
 
           <span>
@@ -36,9 +39,11 @@ function LogIn() {
             
           </span>
         </div>
-      </form>
+      </form> */}
+
+      
       <p>Or you can sign up now</p>
-      <form  name="logInForm" onSubmit={registerUser}>
+      <form  name="signUpForm" onSubmit={registerUser}>
         {/* <div id="userFirstName">
           <label for="firstName">First Name</label>
           <input type="text" name="firstName" id="firstName" />
@@ -75,6 +80,7 @@ function LogIn() {
          />
         <input type="submit" value="Submit" name="submitBtn" />
       </form>
+
     </div>
     {/* <script>
       document.getElementById("header").innerHTML = "Hi i am from script"
@@ -87,4 +93,4 @@ function LogIn() {
     );
 }
 
-export default LogIn;
+export default SignUp;
